@@ -1,0 +1,40 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8EFDC;
+    .logo {
+        margin-left: 1%;
+        height: 100px;
+        width: 300px;
+    }
+    .user-profile {
+        color: #758070;
+        font-style: italic;
+    
+        display: flex;
+        padding: 0 1%;
+        align-items: center;
+        .greetings {
+            font-size: 30px;
+            margin-right: 10px;
+            color: #758070;
+            font-style: italic;
+            
+      
+        }
+    }
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px)  {
+    .greetings {
+        font-size: 17px !important;
+    }
+    .logo {
+        width: 40% !important;
+    }
+}

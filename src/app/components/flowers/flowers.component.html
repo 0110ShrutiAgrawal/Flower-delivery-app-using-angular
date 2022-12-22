@@ -1,0 +1,29 @@
+<app-nav-bar [userName]="userName"></app-nav-bar>
+<div class="flower-container">
+    <div class="menu-bar">
+        <h3 class="tagline">Add to your house of blossoms</h3>      
+        <div class="filters">
+            <app-search-bar (searchQueryEvent)="searchQuery($event)"></app-search-bar>
+            <app-dropdown [selectedValue]="selectedValue" [sortOptions]="sortOptions" (sortEvent)="sortFlowers($event)"></app-dropdown>
+        </div>
+    </div>
+
+    
+    
+    <div class="flower-cards" [class]="{'empty-search': !flowers.length}" *ngIf="!flowers.length">
+        <div class="empty-flower">
+            <mat-spinner *ngIf="!flowersConstant.length"></mat-spinner>
+            <h3 *ngIf="flowersConstant.length">
+                No Flowers found!
+            </h3>
+        </div>
+    </div>
+
+    <div class="flower-cards">
+        <div *ngFor="let flower of flowers" class="flower">
+            <app-flower-card [flowerName]="flower.name" [flowerThumbnail]="flower.thumbnail_image" [flowerImage]="flower.feature_image"
+            [colors]="flower.colors" [rating]="flower.rating" [review]="flower.reviews" (click)="goToFlower(flower)" ></app-flower-card>
+        </div>
+    </div>
+
+</div>

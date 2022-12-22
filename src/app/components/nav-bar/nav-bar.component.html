@@ -1,0 +1,8 @@
+<div class="navbar-container">
+    <link rel="stylesheet" href="">
+    <img src="/assets/logo.png" class="logo" (click)="goToHome()">
+    <div class="user-profile" *ngIf="userName">
+        <p class="greetings">Greetings, {{userName}}</p>
+        <ngx-avatar name="{{userName}}" textSizeRatio="2.5" bgColor="#758070" fgColor="#F8EFDC"></ngx-avatar>
+    </div>
+</div>

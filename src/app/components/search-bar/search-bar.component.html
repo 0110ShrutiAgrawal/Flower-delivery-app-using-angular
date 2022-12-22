@@ -1,0 +1,7 @@
+<mat-form-field>
+    <mat-label style="font-size:20px;color:white">Search</mat-label>
+    <input matInput type="text" style="color: white;" [(ngModel)]="flowerSearch" (ngModelChange)="searchQuery($event)" autocomplete="off">
+    <button mat-button *ngIf="flowerSearch" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
